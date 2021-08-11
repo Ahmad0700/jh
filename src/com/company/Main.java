@@ -25,6 +25,7 @@ public class Main {
             changeBossDefence();
             bossHit();
             heroesHit();
+            heroeMedik();
             fightInfo();
         }
 
@@ -59,6 +60,22 @@ public class Main {
                 }
             }
         }
+
+        public static void heroeMedik() {
+            if (heroesHealth[3] <= 0) {
+                heroesHealth[3] = 0;
+            } else {
+                for (int i = 0; i < heroesHealth.length; i++) {
+                    if (heroesHealth[i] > 0) {
+                        heroesHealth[i] = heroesHealth[i] + heroesMedik;
+                    }
+                }
+            }
+        }
+
+
+
+
 
         public static void heroesHit() {
             for (int i = 0; i < heroesDamage.length; i++) {
